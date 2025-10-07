@@ -1,12 +1,13 @@
 import express from "express";
 import Post from "../models/Post.js";
+import verifyToken from "../middlewares/verifyToken.js";
 
 const router = express.Router();
 
 // ✅ Add Comment to a Post
-router.post("/:id/comment", async (req, res) => {
+router.post("/:id/comment", verifyToken ,  async (req, res) => {
   try {
-    const userId = req.userId || "demoUser"; // abhi ke liye dummy user id
+    const userId = req.userId;
     const { text } = req.body;
 
     if (!text || text.trim() === "") {

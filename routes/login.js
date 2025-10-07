@@ -37,6 +37,7 @@ route.post("/login", async (req, res) => {
       user: {
         id: user._id,
         email: user.email,
+        token,
       },
     });
   } catch (err) {

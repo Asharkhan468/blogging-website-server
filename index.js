@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import commentRoute from './routes/comment.js'
 import likeRoute from './routes/like.js'
+import savedPost from './routes/savedPost.js'
 
 dotenv.config();
 const app = express();
@@ -24,6 +25,7 @@ app.use("/api/auth", loginRoutes);
 app.use("/api/v1", createPost);
 app.use("/api/v1", likeRoute);
 app.use("/api/v1", commentRoute);
+app.use("/api/v1", savedPost);
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");

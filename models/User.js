@@ -10,7 +10,14 @@ const schema = new mongoose.Schema({
     password:{
         type:String,
         required:true,
-    }
+    },
+      savedPosts: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Post",
+    },
+  ],
+
 })
 
 const User = mongoose.model("User", schema);

@@ -1,12 +1,13 @@
 import express from "express";
 import Post from "../models/Post.js";
+import verifyToken from "../middlewares/verifyToken.js";
 
 const router = express.Router();
 
 // ✅ Toggle Like / Unlike a Post
-router.post("/:id/like", async (req, res) => {
+router.post("/:id/like", verifyToken, async (req, res) => {
   try {
-    const userId = req.userId || "demoUser"; // abhi ke liye dummy user
+    const userId = req.userId
     const post = await Post.findById(req.params.id);
 
     if (!post) {
