@@ -6,8 +6,7 @@ const route = express.Router();
 
 route.post("/register", async (req, res) => {
   try {
-    const {  email, password } = req.body;
-
+    const { email, password } = req.body;
     // Check existing user
     const existing = await User.findOne({ email });
     if (existing) {
