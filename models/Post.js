@@ -1,26 +1,3 @@
-// import mongoose from "mongoose";
-
-// const PostSchema = new mongoose.Schema(
-//   {
-//     title: {
-//       type: String,
-//       required: true,
-//     },
-//     description: {
-//       type: String,
-//       required: true,
-//     },
-//     image: {
-//       type: String, // image ka URL store hoga yahan
-//       required: true,
-//     },
-//   },
-//   { timestamps: true }
-// );
-
-// export default mongoose.model("Post", PostSchema);
-
-
 import mongoose from "mongoose";
 
 const PostSchema = new mongoose.Schema(
@@ -59,7 +36,6 @@ const PostSchema = new mongoose.Schema(
         },
       },
     ],
-    
   },
   { timestamps: true }
 );

@@ -47,6 +47,10 @@ router.post("/create", upload.single("image"), async (req, res) => {
     console.error(error);
     res.status(500).json({ message: "Something went wrong", error });
   }
+
+  
 });
+
+
 
 export default router;
