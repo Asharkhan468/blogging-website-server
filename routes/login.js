@@ -26,10 +26,16 @@ route.post("/login", async (req, res) => {
     );
 
     // Token ko cookie me send karo
+    // res.cookie("token", token, {
+    //   httpOnly: true,
+    //   secure: false,
+    //   sameSite: "lax",
+    // });
+
     res.cookie("token", token, {
-      httpOnly: true, 
-      secure: false, 
-      sameSite: "lax", 
+      httpOnly: true,
+      secure: true, 
+      sameSite: "none",
     });
 
     return res.status(200).json({
