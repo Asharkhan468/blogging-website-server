@@ -27,9 +27,9 @@ route.post("/login", async (req, res) => {
 
     // Token ko cookie me send karo
     res.cookie("token", token, {
-      httpOnly: true, // JS se access nahi hoga (XSS safe)
-      secure: true, // sirf HTTPS par chalega (dev me false kar sakte ho)
-      sameSite: "strict", // CSRF protection
+      httpOnly: true, 
+      secure: false, 
+      sameSite: "lax", 
     });
 
     return res.status(200).json({
