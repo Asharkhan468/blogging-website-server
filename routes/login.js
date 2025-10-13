@@ -14,6 +14,7 @@ route.post("/login", async (req, res) => {
 
     const user = await User.findOne({ email });
     if (!user) return res.status(404).json({ message: "User not found!" });
+    console.log(user);
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch)
@@ -25,16 +26,9 @@ route.post("/login", async (req, res) => {
       { expiresIn: "1h" }
     );
 
-    // Token ko cookie me send karo
-    // res.cookie("token", token, {
-    //   httpOnly: true,
-    //   secure: false,
-    //   sameSite: "lax",
-    // });
-
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true, 
+      secure: true,
       sameSite: "none",
     });
 
@@ -43,6 +37,8 @@ route.post("/login", async (req, res) => {
       user: {
         id: user._id,
         email: user.email,
+        name: user.name,
+        profileImage: user.profileImage,
         token,
       },
     });
