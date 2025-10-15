@@ -39,6 +39,7 @@ route.post("/login", async (req, res) => {
         email: user.email,
         name: user.name,
         profileImage: user.profileImage,
+        savedPost:user.savedPosts,
       },
     });
   } catch (err) {
