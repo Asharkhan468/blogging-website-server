@@ -8,10 +8,9 @@ route.post("/logout", async (req, res) => {
   try {
     res.cookie("token", "", {
       httpOnly: true,
-      //   secure: true,
-      secure: false,
+      secure: true,
       sameSite: "none",
-      expires: new Date(0), 
+      expires: new Date(0),
     });
 
     return res.status(200).json({ message: "Logout successful!" });
