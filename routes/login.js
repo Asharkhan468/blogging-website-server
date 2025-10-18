@@ -40,6 +40,7 @@ route.post("/login", async (req, res) => {
         name: user.name,
         profileImage: user.profileImage,
         savedPost:user.savedPosts,
+        token,
       },
     });
   } catch (err) {

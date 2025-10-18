@@ -10,6 +10,7 @@ import likeRoute from "./routes/like.js";
 import savedPost from "./routes/savedPost.js";
 import updateProfile from "./routes/updateProfile.js";
 import allPost from "./routes/allPost.js";
+import logout from './routes/logout.js'
 import cors from "cors";
 
 dotenv.config();
@@ -38,6 +39,7 @@ app.use("/api/v1", commentRoute);
 app.use("/api/v1", savedPost);
 app.use("/api/v1/updateProfile", updateProfile);
 app.use("/api/v1/", allPost);
+app.use("/api/auth" , logout);
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");
