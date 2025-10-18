@@ -6,13 +6,12 @@ dotenv.config();
 
 route.post("/logout", async (req, res) => {
   try {
-    // Token cookie ko remove kar do (expire kar ke)
     res.cookie("token", "", {
       httpOnly: true,
       //   secure: true,
       secure: false,
       sameSite: "none",
-      expires: new Date(0), // immediately expire
+      expires: new Date(0), 
     });
 
     return res.status(200).json({ message: "Logout successful!" });
