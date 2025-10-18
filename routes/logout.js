@@ -9,7 +9,8 @@ route.post("/logout", async (req, res) => {
     // Token cookie ko remove kar do (expire kar ke)
     res.cookie("token", "", {
       httpOnly: true,
-      secure: true,
+      //   secure: true,
+      secure: false,
       sameSite: "none",
       expires: new Date(0), // immediately expire
     });
