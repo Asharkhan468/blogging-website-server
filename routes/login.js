@@ -30,6 +30,7 @@ route.post("/login", async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: "None",
+      maxAge: 24 * 60 * 60 * 1000, // 1 day (important!)
     });
 
     return res.status(200).json({
@@ -39,7 +40,7 @@ route.post("/login", async (req, res) => {
         email: user.email,
         name: user.name,
         profileImage: user.profileImage,
-        savedPost:user.savedPosts,
+        savedPost: user.savedPosts,
         token,
       },
     });
