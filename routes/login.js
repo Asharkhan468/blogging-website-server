@@ -29,7 +29,7 @@ route.post("/login", async (req, res) => {
     res.cookie("token", token, {
       httpOnly: true,
       secure: true,
-      sameSite: "none",
+      sameSite: "None",
     });
 
     return res.status(200).json({

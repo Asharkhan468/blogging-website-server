@@ -9,7 +9,7 @@ route.post("/logout", async (req, res) => {
     res.cookie("token", "", {
       httpOnly: true,
       secure: true,
-      sameSite: "none",
+      sameSite: "None",
       expires: new Date(0),
     });
 
