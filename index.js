@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["https://blogging-website-mauve-seven.vercel.app"],
+    origin: ["https://blogging-website-mauve-seven.vercel.app" , 'http://localhost:3000'],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
