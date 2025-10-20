@@ -7,7 +7,7 @@ dotenv.config();
 route.post("/logout", async (req, res) => {
   try {
     res.cookie("token", "", {
-      httpOnly: true,
+      httpOnly: false,
       secure: true,
       sameSite: "None",
       expires: new Date(0),
