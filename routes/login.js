@@ -27,12 +27,10 @@ route.post("/login", async (req, res) => {
     );
 
     res.cookie("token", token, {
-      httpOnly: false,
+      httpOnly: true,
       secure: true,
-      sameSite: "Strict",
+      sameSite: "None",
       maxAge: 24 * 60 * 60 * 1000,
-      domain:".vercel.app",
-      path: "/", 
     });
 
     return res.status(200).json({
