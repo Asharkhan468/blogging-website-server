@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://blogging-website-nine-chi.vercel.app",
+    origin: ["http://localhost:3000" , "https://blogging-website-nine-chi.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
