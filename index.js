@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:3000" , "https://blogging-website-16ytt8yuy-asharkhan468s-projects.vercel.app"],
+    origin: ["http://localhost:3000" , "https://blogging-website-zeta-sand.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
